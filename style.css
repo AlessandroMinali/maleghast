@@ -1,6 +1,6 @@
 :root{--screen:40px}
 @font-face{font-family:"myFont";src:url(metalblackletterff/MetalBlackletter_v4.ttf)}
-html{font-family:"myFont","Bitstream Vera Serif",serif}
+html{font-family:"myFont","Bitstream Vera Serif",serif;background:white}
 body{display:flex;flex-direction:column;align-items:center;height:100vh;cursor:crosshair;margin:0 auto}
 h1{text-align:center;margin-bottom:3px}
 @media only screen and (max-width: 500px) {
