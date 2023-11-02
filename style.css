@@ -1,97 +1,21 @@
-:root {
-  --screen: 40px;
-}
-
-@font-face {
-  font-family: "myFont";
-  src: url("metalblackletterff/MetalBlackletter_v4.ttf");
-}
-
-html {
-  font-family: "myFont", "Bitstream Vera Serif", serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  cursor: crosshair;
-  margin: 0 auto;
-}
-h1 {
-  text-align: center;
-  margin-bottom: 3px;
-}
+:root{--screen:40px}
+@font-face{font-family:"myFont";src:url(metalblackletterff/MetalBlackletter_v4.ttf)}
+html{font-family:"myFont","Bitstream Vera Serif",serif}
+body{display:flex;flex-direction:column;align-items:center;height:100vh;cursor:crosshair;margin:0 auto}
+h1{text-align:center;margin-bottom:3px}
 @media only screen and (max-width: 500px) {
-  #brushesContainer div:last-child {
-    font-size: 8px !important;
-    width: 40px !important;
-  }
-  footer {
-    font-size: 6px !important;
-  }
+#brushesContainer div:last-child{font-size:8px!important;width:40px!important}
+footer{font-size:6px!important}
 }
-button {
-  display: inline-block;
-  cursor: pointer;
-}
-#canvas {
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: 5px solid black;
-  margin: 10px 0;
-  background: white;
-}
-
-#canvas td {
-  width: var(--screen);
-  height: var(--screen);
-  border: 1px solid #000;
-  padding: 0;
-}
-#canvas td:hover {
-  background-color: #aaa;
-  opacity: 0.2;
-}
-
-#brushesContainer {
-  padding: 5px;
-  background: #ccc;
-}
-footer {
-  position: absolute;
-  bottom: 4px;
-  right: 5px;
-  font-size: 8px;
-}
-
-#brushesContainer > div {
-  display: inline-block;
-}
-
-#brushesContainer div:last-child {
-  font-size: 10px;
-  text-align: center;
-  width: 48px;
-  padding-top: 3px;
-}
-  
-[data-brush] {
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
-  border: 1px solid #333;
-  border-radius: 30%;
-  cursor: pointer;
-}
-
-.clearCanvasBtn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-
-a {
-  color: red;
-}
+button{display:inline-block;cursor:pointer}
+#canvas{border-spacing:0;border-collapse:collapse;border:5px solid #000;margin:10px 0;background:#fff}
+#canvas td{width:var(--screen);height:var(--screen);border:1px solid #000;padding:0}
+#canvas td:hover{background-color:#aaa;opacity:.2}
+#share{margin-top:3px}
+#brushesContainer{padding:5px;background:#ccc}
+footer{position:absolute;bottom:4px;right:5px;font-size:8px}
+#brushesContainer > div{display:inline-block}
+#brushesContainer div:last-child{font-size:10px;text-align:center;width:48px;padding-top:3px}
+[data-brush]{width:25px;height:25px;margin:0 auto;border:1px solid #333;border-radius:30%;cursor:pointer}
+.clearCanvasBtn{position:fixed;top:20px;right:20px}
+a{color:red}

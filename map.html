@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <head>
+  <link rel="preload" as='image' href='spritesheet.png'>
+  <link rel="preload" as='font' href='metalblackletterff/MetalBlackletter_v4.ttf'>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preload" as='script' href='script.js'>
+
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
   <meta content='Quickly map battle maps for MALEGHAST' name='description'>
   <title>MALEGHAST MAP MAKER</title>
@@ -21,6 +25,10 @@
   </div>
   <div style="padding: 5px;">Current Brush: <span id="brush">Empty</span></div>
   <div id="brushesContainer"></div>
+  <div style='flex-direction: row;'>
+    <button onclick="save()">Get Permalink: </button>
+    <input id="share" type="text" name="permalink">
+  </div>
   <footer>
     <span style="font-family: sans-serif;">
       MALEGHAST MAP MAKER is an independent production by
@@ -29,6 +37,6 @@
     </span>
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
-</body>
 
-<script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
