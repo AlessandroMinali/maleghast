@@ -30,6 +30,12 @@ footer{position:absolute;bottom:4px;right:5px;font-size:8px}
 [data-brush]{width:25px;height:25px;margin:0 auto;border:1px solid #333;border-radius:30%;cursor:pointer}
 .clearCanvasBtn{position:fixed;top:20px;right:20px}
 a{color:red}
+@media print {
+h1,div>:not(#canvas),#brushesContainer{display:none}
+footer{position:initial;font-size:5px !important}
+body{align-items:initial}
+}
+
   </style>
 </head>
 
@@ -46,7 +52,7 @@ a{color:red}
   <div>
     <table id="canvas"></table>
   </div>
-  <div style="padding: 5px;">Current Brush: <span id="brush">Empty</span></div>
+  <div style="padding: 5px;"><span>Current Brush: </span><span id="brush">Empty</span></div>
   <div id="brushesContainer"></div>
   <div style='flex-direction: row;'>
     <button onclick="save()">Get Permalink: </button>
