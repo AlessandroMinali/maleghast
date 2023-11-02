@@ -1,3 +1,5 @@
+// modified code from https://codepen.io/DooMxDD/pen/RmWqjM
+
 let shift = "-1";
 let canvas = document.querySelector("#canvas");
 
