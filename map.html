@@ -75,7 +75,7 @@ function save() {
   x = LZString.compressToEncodedURIComponent(
     Array.from(document.querySelectorAll('td')).map(x => x.dataset?.brush || '0').join('')
   )
-  share.value = `${window.location.hostname}${window.location.pathname}?w=${customWidth}&h=${customHeight}&m=${x}`;
+  share.value = `${window.location.protocol}//${window.location.hostname}${window.location.pathname}?w=${customWidth}&h=${customHeight}&m=${x}`;
 }
 
 function load() {
