@@ -13,8 +13,8 @@ function GenerateCanvas(sizeX, sizeY) {
           Draw(e.target);
       });
       
-      td.addEventListener("click", (e) => {
-        if(e.buttons == 0)
+      td.addEventListener("mousedown", (e) => {
+        if(e.buttons == 1)
           Draw(e.target);
       });
     }
