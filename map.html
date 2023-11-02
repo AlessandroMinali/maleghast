@@ -141,8 +141,8 @@ function GenerateBrushes(brushes) {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const customWidth = urlParams.get('w');
-const customHeight = urlParams.get('h');
+const customWidth = urlParams.get('w') || 8;
+const customHeight = urlParams.get('h') || 8;
 if (customWidth && customHeight) {
   GenerateCanvas(
     Number(customWidth),
