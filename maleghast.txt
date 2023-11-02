@@ -1,0 +1,73 @@
+- - -
+ROUND
+- - -
+d6 highest for initiative, choose who deploys first
+unit can be activated once per round
+turn consists of MOVE and ACT in any order
+may forgo ACT for another MOVE
+after 6 rounds ends in draw
+
+- - -
+MV
+- - -
+no diagonal movement allowed
+at least MOVE 1 space regardless of cost
+cost +1 to enter elevation
+cannot be pushed/pulled up elevation
+cost +1 to exit terrain
+1 dmg(ignoring ARM) starting turn or entering hazard
+
+- - -
+ARM
+- - -
+ARMOR		physical
+WARD		toxic, fire, curse, holy
+SUPER		all (excl. DEVIL DMG)
+
+- - -
+ATTACK
+- - -
+roll equal to or above DF to hit
+missed atk deals GRAZE(inherit dmg type, deal 1 dmg)
++1D high ground atk
+-1D low  ground atk
+if reduced to 0HP, turn into corpse(unless obliterated)
+
+- - -
+COVER
+- - -
+ranged atk gain -1D if target in cover
+walls can be targeted(2HP)
+
+- - -
+TOKENS
+- - -
+STRENGTH	deal +1 damage
+WEAK		deal -1 damage
+
+VITALITY	take -1 damage
+VULNERABILITY	take +1 damage
+
+SLOW		move max 1
+FAST		move +2
+
+- - -
+NECROMANCER
+- - -
+BODY BLOCK	adj minion can be swapped as primary target instead of necro
+SOUL GATHER	+1 SOUL every round after first, max 6 SOUL
+SOUL HARVEST	+1 SOUL first time any unit is slain(unless OBLITERATED)
+
+- - -
+DARK MASS
+- - -
+i.   pick house
+ii.  pick units from house(and one other house if HERESY)
+iii. spend DARK POWER based on MALICE. upgrade unit type, gain ACT or SOUL ability.
+
+THRALL(X)	two per slot, act together
+SCION (3)	elite
+FREAK (2) 	support
+HORROR(2)	fast + fragile
+HUNTER(2)	sniper
+TYRANT(1)	massive + low DF
