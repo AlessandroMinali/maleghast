@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <link rel="preload" as='image' href='map/spritesheet.svg'>
+  <link rel="preload" as='image' href='map/spritesheet.png'>
   <link rel="preload" as='font' href='map/metalblackletter_v4.woff2'>
 
   <meta property=’og:title’ content='MALEGHAST MAP MAKER'/>
@@ -33,7 +33,7 @@ button{display:inline-block;cursor:pointer}
 footer{position:absolute;bottom:4px;right:5px;font-size:8px}
 #brushesContainer > div{display:inline-block}
 #brushesContainer div:last-child{font-size:10px;text-align:center;width:48px;padding-top:3px}
-#brushesContainer [data-brush]{width:25px;height:25px;margin:0 auto;border:1px solid #333;border-radius:30%;cursor:pointer}
+#brushesContainer [data-brush]{background-color:white;width:25px;height:25px;margin:0 auto;border:1px solid #333;border-radius:30%;cursor:pointer}
 .clearCanvasBtn{position:fixed;top:20px;right:20px}
 a{color:red}
 @media print {
@@ -51,6 +51,8 @@ body{align-items:initial}}
     <button onclick="window.location.href = window.location.pathname + '?w=6&h=8'">6x8</button>
     <button onclick="window.location.href = window.location.pathname + '?w=8&h=8'">8x8</button>
     <button onclick="window.location.href = window.location.pathname + '?w=10&h=10'">10x10</button>
+    <button id="fileSelect">Custom Brushes</button>
+    <button id="fileClear" onclick="clearBrush();" style='display: none;'>Clear Brushes</button>
   </div>
   <div>
     <table id="canvas"></table>
@@ -58,6 +60,7 @@ body{align-items:initial}}
   <div id="brushesContainer">
     <div style="display: block; text-align: center;">
       <span>Current Brush: </span><span id="brush">Empty</span>
+      <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="gotPhoto(this)">
     </div>
   </div>
   <div style='flex-direction: row;'>
@@ -73,6 +76,70 @@ body{align-items:initial}}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
 <script type="text/javascript">
+
+fileSelect.addEventListener("click", function (e) {
+  confirm("WARNING: Custom brush dimension must be a single 800x100 spritesheet of the 8 tiles(each being 100x100) that you want to use");
+  fileElem.click();
+  e.preventDefault();
+}, false);
+// modified from https://stackoverflow.com/a/41416763/21513159
+// Saved to localstorage
+function gotPhoto(element) {
+  var file = element.files[0];
+  var reader = new FileReader()
+  reader.onload = function(base64) {
+    localStorage["file"] = reader.result;
+    setBrush(reader.result);
+  }
+  reader.readAsDataURL(file);
+}
+// modified end
+
+// https://kontext.tech/article/905/javascript-convert-svg-to-base64
+function getDataURL(url) {
+  return new Promise((resolve, reject) => {
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function () {
+      var canvas = document.createElement('CANVAS');
+      var ctx = canvas.getContext('2d');
+      var dataURL;
+      canvas.height = this.naturalHeight;
+      canvas.width = this.naturalWidth;
+      ctx.drawImage(this, 0, 0);
+      dataURL = canvas.toDataURL("image/png");
+      resolve(dataURL);
+    };
+
+    img.onerror = function () {
+      resolve(url);
+    };
+
+    img.src = url;
+    if (img.complete || img.complete === undefined) {
+      img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+      img.src = url;
+    }
+  });
+}
+
+function setBrush(s) {
+  sprites = s;
+  document.querySelectorAll('#brushesContainer div:not(:first-child)').forEach(el => el.remove());
+  GenerateBrushes(brushList);
+  fileSelect.style.display = 'none';
+  fileClear.style.display = 'inline-block';
+}
+
+function clearBrush() {
+  sprites = "map/spritesheet.png";
+  document.querySelectorAll('#brushesContainer div:not(:first-child)').forEach(el => el.remove());
+  GenerateBrushes(brushList);
+  fileSelect.style.display = 'inline-block';
+  fileClear.style.display = 'none';
+  localStorage.removeItem("file");
+}
+
 function save() {
   x = LZString.compressToEncodedURIComponent(
     Array.from(document.querySelectorAll('td')).map(x => x.dataset?.brush || '0').join('')
@@ -94,8 +161,8 @@ function savePNG() {
   });
 }
 
-// modified code from https://codepen.io/DooMxDD/pen/RmWqjM
-let shift = -1;
+// modified from https://codepen.io/DooMxDD/pen/RmWqjM
+let shift = 0;
 let type  = 0;
 let canvas = document.querySelector("#canvas");
 
@@ -123,13 +190,9 @@ function GenerateCanvas(sizeX, sizeY) {
 function Draw(target) {
   share.value = ''
   target.setAttribute("data-brush", type);
-  if (shift ==  -1) {
-    target.style.background = '';
-    return;
-  }
-  target.style.background = "url(\"map/spritesheet.svg\")";
+  target.style.backgroundImage = `url(${sprites})`;
   target.style.backgroundPosition = `${shift}px 0px`
-  target.style.backgroundSize = "280px 40px";
+  target.style.backgroundSize = "320px 40px";
 }
 
 function GenerateBrushes(brushes) {
@@ -138,9 +201,9 @@ function GenerateBrushes(brushes) {
     let brushElem = document.createElement("div");
     brushElem.setAttribute("data-brush", b[1]);
     if (index != 0) {
-      brushElem.style.background = "url(\"map/spritesheet.svg\")";
-      brushElem.style.backgroundPosition = `${(index - 1) * -50 / 2}px 0px`
-      brushElem.style.backgroundSize = "175px 25px";
+      brushElem.style.backgroundImage = `url(${sprites})`;
+      brushElem.style.backgroundPosition = `${(index) * -50 / 2}px 0px`
+      brushElem.style.backgroundSize = "200px 25px";
     } else {
       brushElem.style.background = 'white';
     }
@@ -157,8 +220,9 @@ function GenerateBrushes(brushes) {
     })
   });
 }
-// modified code end
+// modified end
 
+let sprites = "'map/spritesheet.png'";
 const urlParams = new URLSearchParams(window.location.search);
 const customWidth = urlParams.get('w') || 8;
 const customHeight = urlParams.get('h') || 8;
@@ -172,18 +236,16 @@ if (customWidth && customHeight) {
 }
 
 let brushList = [
-  ['Terrain', 0],
-  ['Elevation', 1],
-  ['Hazard', 2],
-  ['Objective', 3],
-  ['Special', 4],
-  ['Stairs', 5],
-  ['Wall', 6]
+  'Empty',
+  'Terrain',
+  'Elevation',
+  'Hazard',
+  'Objective',
+  'Special',
+  'Stairs',
+  'Wall',
 ]
-brushList = [
-  ['Empty', -1],
-  ...(brushList.map((x) => { x[1] *= -40; return x}))
-]
+brushList = brushList.map((x, index) => { return [x, index * -40]; })
 GenerateBrushes(brushList);
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -195,7 +257,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       shift = brushList[data[index]][1];
       Draw(el);
     })
-  }   
+    type = shift = 0;
+  }
+  if (localStorage["file"]) {
+    setBrush(localStorage["file"]);
+  }
 });
 </script>
 <script type="text/javascript">
