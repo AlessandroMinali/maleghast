@@ -25,11 +25,11 @@ h1{font-family:"myFont",serif;text-align:center;margin-bottom:3px}
 footer{font-size:6px!important}
 }
 button{display:inline-block;cursor:pointer}
-#canvas{border-spacing:0;border-collapse:collapse;border:5px solid #000;margin:5px 0;background:#fff}
+#canvas{border-spacing:0;border-collapse:collapse;border:5px solid #000;background:#fff}
 #canvas td{width:var(--screen);height:var(--screen);border:1px solid #000;padding:0}
 #canvas td:hover{background-color:#aaa;opacity:.2}
 #share{margin-top:3px;width:200px;margin-bottom:20px}
-#brushesContainer{font-family:"myFont",serif;padding:5px;background:#ccc}
+#brushesContainer{font-family:"myFont",serif;margin:5px 0;padding:5px;background:#ccc}
 footer{position:absolute;bottom:4px;right:5px;font-size:8px}
 #brushesContainer > div{display:inline-block}
 #brushesContainer div:last-child{font-size:10px;text-align:center;width:48px;padding-top:3px}
@@ -49,7 +49,7 @@ body{align-items:initial}
   <a href="map.html" style='text-decoration: none; color: black'>
     <h1>MALEGHAST MAP MAKER</h1>
   </a>
-  <div style='flex-direction: row;'>
+  <div style='flex-direction: row; margin-bottom: 5px;'>
     <button onclick="window.location.href = window.location.pathname + '?w=6&h=6'">6x6</button>
     <button onclick="window.location.href = window.location.pathname + '?w=6&h=8'">6x8</button>
     <button onclick="window.location.href = window.location.pathname + '?w=8&h=8'">8x8</button>
