@@ -78,19 +78,27 @@ body{align-items:initial}}
 <script type="text/javascript">
 
 fileSelect.addEventListener("click", function (e) {
-  confirm("WARNING: Custom brush dimension must be a single 800x100 spritesheet of the 8 tiles(each being 100x100) that you want to use");
   fileElem.click();
   e.preventDefault();
 }, false);
 // modified from https://stackoverflow.com/a/41416763/21513159
 // Saved to localstorage
+const img_frag = document.createElement('img');
 function gotPhoto(element) {
   var file = element.files[0];
   var reader = new FileReader()
-  reader.onload = function(base64) {
-    localStorage["file"] = reader.result;
-    setBrush(reader.result);
+  reader.onload = function() {
+    img_frag.onload = function () {
+      if (img_frag.width != 800 || img_frag.height != 100) {
+        confirm("WARNING: Custom brush dimension must be a single 800x100 spritesheet of the 8 tiles(each being 100x100) that you want to use");
+      } else {
+        localStorage["file"] = reader.result;
+        setBrush(reader.result);
+      }
+    }
+    img_frag.src = reader.result;
   }
+
   reader.readAsDataURL(file);
 }
 // modified end
