@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property=’og:title’ content='MALEGHAST UNIT BLOCKS'/>
+  <meta property="og:image" content="https://alessandrominali.github.io/maleghast/units/image-min.png">
+  <meta property=’og:description’ content='Printer friendly MAGNAGOTHICA: MALEGHAST unit sheets'/>
+  <meta property=’og:url’ content='https://alessandrominali.github.io/maleghast/units.html'/>
+  <meta property='og:image:width' content='555' />
+  <meta property='og:image:height' content='627' />
+  
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
+  <meta content='Printer friendly MAGNAGOTHICA: MALEGHAST unit sheets' name='description'>
+
   <title>MALEGHAST UNIT BLOCKS</title>
-  <!-- <link rel="stylesheet" href="styles.css"> -->
 
   <style type="text/css">
     body{margin:3px;padding:0;font-family:sans-serif}
@@ -159,7 +164,7 @@ function generate_unit_block(data) {
 const xhr = new XMLHttpRequest();
 xhr.open(
   "GET",
-  "/Maleghast Unit Data/Sheet 1-Maleghast Unit Data - Unit List.tsv",
+  "/units/Maleghast Unit Data/Sheet 1-Maleghast Unit Data - Unit List.tsv",
   true,
 );
 xhr.onload = () => {
@@ -170,5 +175,3 @@ xhr.onload = () => {
 xhr.send();
   </script>
 </body>
-
-</html>
