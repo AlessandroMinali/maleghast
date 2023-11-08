@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MALEGHAST UNIT BLOCKS</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+
+  <style type="text/css">
+    body{margin:0;padding:0;font-family:sans-serif;display:flex;flex-wrap:wrap}
+    .unit{width:600px;margin:3px;border:1px solid black;}
+    .title{text-align:center;color:white}
+    .header{background:#b8b8b8;font-weight:bold;text-align:center}
+    .row{display:flex}
+    .row > div{flex:1 1 0px;text-align:center}
+    .special{text-align: left}
+    .mid{border:1px solid black;border-top:0;border-bottom:0}
+    .mid:not(:first-child){margin-left:-1px}
+    ul{margin:0;}
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+const colors = {
+  'C.A.R.C.A.S.S.': '#f20caf',
+  'Goregrinders': '#ff772a',
+  'Gargamox': '#2cff3d',
+  'Deadsouls': '#90fff0',
+  'Abhorrers': '#ffc93b',
+  'Igorri': '#a000ff',
+};
+const labels = ['MV', 'HP', 'DF', 'ARM'];
+
+function generate_unit_block(data) {
+  let unit = document.createElement('div');
+  unit.className = 'unit';
+
+  let header = document.createElement('div');
+  header.innerText = `${data[1]} (${data[2]})`;
+  header.className = 'title';
+  if ("GargamoxDeadsouls".includes(data[0])) {
+    header.style.color = 'black';
+  }
+  header.style.backgroundColor = colors[data[0]];
+  // header.style.cssText = `background-color: ${colors[data[0]]}`;
+  unit.appendChild(header);
+
+  let stats = document.createElement('div');
+  stats.className = 'row';
+  data.slice(3, 7).forEach((d, i) => {
+    let div = document.createElement('div');
+    if (i == 1 || i == 2) { div.className += ' mid'; }
+    let k = document.createElement('div');
+    k.className = 'header'
+    k.innerText = labels[i];
+    let v = document.createElement('div');
+    v.innerText = d;
+    div.appendChild(k);
+    div.appendChild(v);
+    stats.appendChild(div);
+  })
+  unit.append(stats);
+
+  let traits = document.createElement('div');
+  traits.innerText = 'Traits';
+  traits.className = 'header';
+  unit.appendChild(traits);
+  traits = document.createElement('ul');
+  data.slice(7, 10).forEach((d) => {
+    if (d == "") { return; }
+
+    let t = document.createElement('li');
+    d = d.split(': ');
+
+    let span = document.createElement('i');
+    span.innerText = d[0];
+    t.appendChild(span);
+    if (d[1]) {
+      span.innerText += ":\xa0";
+      let span2 = document.createElement('span');
+      span2.innerText = d[1];
+      t.appendChild(span2);
+    }
+    traits.appendChild(t);
+  })
+  unit.appendChild(traits);
+
+  let acts = document.createElement('div');
+  acts.innerText = 'ACT Abilities';
+  acts.className = 'header';
+  unit.appendChild(acts);
+  acts = document.createElement('div');
+  acts.className = 'act';
+  data.slice(10, 13).forEach((d) => {
+    if (d == "") { return; }
+
+    index = d.search(/(On hit|Effect|Line|Splash|Stance)/);
+    line1 = d.slice(0, index).split(': ');
+    
+    let name = document.createElement('b');
+    name.innerText = `${line1[0]}:\xa0`;
+    let tags = document.createElement('i');
+    tags.innerText = line1[1];
+    let line = document.createElement('div');
+    line.appendChild(name);
+    line.appendChild(tags);
+
+    line2 = d.slice(index,);
+    let desc = document.createElement('div');
+    desc.innerText = line2;
+
+    acts.appendChild(line);
+    acts.appendChild(desc);
+  })
+  unit.appendChild(acts);
+
+  let special = document.createElement('div');
+  special.className = 'row';
+  data.slice(13,).forEach((d, i) => {
+    s = document.createElement('div');
+    if (i == 1) { s.className = 'mid'; }
+    index = d.indexOf(':');
+    let header = document.createElement('div');
+    header.innerText = d.slice(0, index);
+    header.className = 'header';
+    let desc = document.createElement('div');
+    desc.innerText = d.slice(index + 1,);
+    desc.className = 'special';
+    s.appendChild(header);
+    s.appendChild(desc);
+    special.appendChild(s);
+  })
+  unit.appendChild(special);
+
+  document.body.appendChild(unit);
+}
+
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "/Maleghast Unit Data/Sheet 1-Maleghast Unit Data - Unit List.tsv", true);
+xhr.onload = () => {
+  let data = xhr.response.replace(/\"/g, '').split("\n");
+  data.shift();
+  data.forEach(d => generate_unit_block(d.split("\t")))
+};
+xhr.send();
+
+  </script>
+</body>
+
+</html>
