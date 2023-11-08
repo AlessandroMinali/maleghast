@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <head>
+  <link rel="preload" as='font' href='map/metalblackletter_v4.woff2'>
+
   <meta property=’og:title’ content='MALEGHAST UNIT BLOCKS'/>
   <meta property="og:image" content="https://alessandrominali.github.io/maleghast/units/image-min.png">
   <meta property=’og:description’ content='Printer friendly MAGNAGOTHICA: MALEGHAST unit sheets'/>
@@ -13,24 +15,44 @@
   <title>MALEGHAST UNIT BLOCKS</title>
 
   <style type="text/css">
-    body{margin:3px;padding:0;font-family:sans-serif}
-    main{display:flex;flex-wrap:wrap}
-    .unit{margin:1px;border:1px solid black; flex:1 0 475px}
-    .title{text-align:center;color:white;font-size:large;padding:1px}
-    .header{background:#b8b8b8;font-weight:bold;text-align:center}
-    .row{display:flex}
-    .row>div{flex:1 1 0px;text-align:center}
-    .act>div,.special{padding:1px}
-    .special{text-align: left;}
-    .mid{border:1px solid black;border-top:0;border-bottom:0}
-    .mid:not(:first-child){margin-left:-1px}
-    ul{margin:0}
+@font-face{font-family:"myFont";src:url(map/metalblackletter_v4.woff2)}
+body{margin:3px;padding:0}
+body>div,footer{font-size:10px;}
+footer{float:right;margin:3px;}
+main{display:flex;flex-wrap:wrap;font-family:sans-serif}
+.unit{margin:1px;border:1px solid black; flex:1 0 475px}
+.title{text-align:center;color:white;font-size:large;padding:1px}
+.header{background:#b8b8b8;font-weight:bold;text-align:center;padding:1px}
+.row{display:flex}
+.row>div{flex:1 1 0px;text-align:center}
+.act>div,.special{padding:1px}
+.special{text-align: left;}
+.mid{border:1px solid black;border-top:0;border-bottom:0}
+.mid:not(:first-child){margin-left:-1px}
+ul{margin:0}
+h1{text-align:center;font-family:myFont}
+@media print {
+main{display:block}
+h1,body>div{display:none}
+.title,.header{color:black;font-size:normal;}
+.unit{page-break-inside:avoid;border-bottom:0}
+.row,.row+.header,ul+.header{border:1px solid black;border-left:0;border-right:0}
+.row+.header{border-top:0}
+}
   </style>
 </head>
 
 <body>
-  <div>Update 1</div>
+  <h1>MALEGHAST UNIT BLOCKS</h1>
+  <div>Update 1(Nov 4 2023)<br/>Best print settings: Orientation="Landscape" and Layout>Pages per Sheet="4", toggle Print Backgrounds to add/remove colored headings</div>
   <main></main>
+  <footer>
+    <span style="font-family: sans-serif;">
+      MALEGHAST UNIT BLOCKS is an independent production by
+      <a href="https://github.com/AlessandroMinali/maleghast" target="_blank">Alessandro Minali</a>. made for
+    </span>
+    <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
+  </footer>
   <script type="text/javascript">
 const colors = {
   "C.A.R.C.A.S.S.": "#f20caf",
