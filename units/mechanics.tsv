@@ -1,6 +1,6 @@
 FACTION	NAME	DESCRIPTION
 C.A.R.C.A.S.S.	Formation	While adjacent to an ally, gain +1D on attacks.
-C.A.R.C.A.S.S.	Reload	Once used, a unit cannot use any ability with this tag until it reload. To reload, sacrifice a MOVE. Other abilities may allow a reload for free.
+C.A.R.C.A.S.S.	Reload	Once used, a unit cannot use any ability with this tag until it reloads. To reload, sacrifice a MOVE. Other abilities may allow a reload for free.
 C.A.R.C.A.S.S.	Headshot	Effect that triggers when rolling a 6 on the final attack roll.
 Goregrinders	Blood Rage	If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 strength and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal.
 Goregrinders	Berserk	After a berserk unit ACTs, it splashes (self) 1 damage, then discards a berserk token. If this effect does not damage any other characters, it deals 1 damage to itself instead, ignoring armor. Berserk counts as a positive and a negative token.
