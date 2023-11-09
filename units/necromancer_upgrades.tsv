@@ -34,7 +34,7 @@ Goregrinders	Soul	6	Devil Impact (6 SOUL): Own turn. Deal 6 devil damage to an a
 Gargamox	Trait	-	"Pollution Shroud: While standing in a hazard, you have cover."
 Gargamox	Trait	-	"Corruptor: After you MOVE, create a hazard in an adjacent space."
 Gargamox	Trait	-	Spreader: Infect abilities that you use or that target you may jump an extra time.
-Gargamox	Act	-	"Melt: Curse, Range 4. Effect: Unit takes 1 toxic damage, ignoring amror. If this reduces it to 0 hp, it is obliterated and it melts, creating a hazard in its space."
+Gargamox	Act	-	"Melt: Curse, Range 4. Effect: Unit takes 1 toxic damage, ignoring armor. If this reduces it to 0 hp, it is obliterated and it melts, creating a hazard in its space."
 Gargamox	Act	-	"Corpse Explosion: Range 4, Corpse. Effect: Choose a corpse in range. It explodes for a splash effect centred on it for 1 plague and push 1. Then remove it and replace it with a hazard."
 Gargamox	Act	-	"Vermin Form: Range 4, Corpse. Choose a corpse or a hazard in range and swap places with it. You become curseproof until the end of your next turn."
 Gargamox	Act	-	Ceaseless Spew: Line 6. Effect: 1 plague. Pull all affected units 1.
@@ -92,6 +92,6 @@ Igorri	Act	-	"Chaos Beam: Line 3. Effect: Line: 1 fire damage and inflict 1 vuln
 Igorri	Soul	1	"Flesh Jump (1 SOUL): Own or allied turn. Range 3. Effect: Swap places with an allied unit, then both of you mutate."
 Igorri	Soul	2	"Grow Bonus Legs (2 SOUL): Own or allied turn. Range 3. Effect: Remove any number of mutation tokens on self or target unit, then target may step 2 per token removed with free movement."
 Igorri	Soul	2	"Grow Bonus Limbs (2 SOUL): Own or allied turn. Range 3. Trigger: Turn start. Effect: Remove any number of mutation tokens from target, then target gains +1D on attacks this turn per token removed."
-Igorri	Soul	3	"Recycle (3 SOUL): Curse, Any turn. Trigger: Turn end. Effect: Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are obliteratd. Create up to 3 corpse tokens under their space or in free adjacent spaces."
+Igorri	Soul	3	"Recycle (3 SOUL): Curse, Any turn. Trigger: Turn end. Effect: Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are obliterated. Create up to 3 corpse tokens under their space or in free adjacent spaces."
 Igorri	Soul	4	"Devolve (4 SOUL): Curse, Foe turn. Range 3. Trigger: Turn start. Effect: Inflict 1 slow, weak, and vulnerable on a foe (5+) twice."
 Igorri	Soul	6	"Final Form (6 SOUL): Own turn. Trigger: Turn start. Effect: Increase MV to 6, DF to 6+, gain 6 strength, become curseproof, and gain SUPER. Keep any damage taken. At the end of your next turn, your form destabilizes and you are obliterated."

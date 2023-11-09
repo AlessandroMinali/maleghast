@@ -20,15 +20,18 @@ body{margin:3px;padding:0}
 body>div,footer{font-size:10px;}
 footer{float:right;margin:3px;}
 main{display:flex;flex-wrap:wrap;font-family:sans-serif}
-.unit{margin:1px;border:1px solid black; flex:1 0 475px}
+.unit{flex:1 0 475px}
+.unit,.mechanic{margin:1px;border:1px solid black}
+.mechanic{width:100%}
 .title{text-align:center;color:white;font-size:large;padding:1px}
 .header{background:#b8b8b8;font-weight:bold;text-align:center;padding:1px}
 .row{display:flex}
 .row>div{flex:1 1 0px;text-align:center}
 .act>div,.special{padding:1px}
-.special{text-align: left;}
+.special{text-align:left;margin:1px}
 .mid{border:1px solid black;border-top:0;border-bottom:0}
 .mid:not(:first-child){margin-left:-1px}
+.end{border:1px solid black;border-top:0;border-bottom:0;border-right:0;}
 ul{margin:0}
 h1{text-align:center;font-family:myFont}
 select,option{font-size:16px;width: 100%}
@@ -55,7 +58,7 @@ h1,body>div{display:none}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
   <script type="text/javascript">
-let upgrades;
+let upgrades, mechanics;
 const colors = {
   "C.A.R.C.A.S.S.": "#f20caf",
   Goregrinders: "#ff772a",
@@ -65,8 +68,44 @@ const colors = {
   Igorri: "#a000ff",
 };
 const labels = ["MV", "HP", "DF", "ARM"];
+let house;
+const main = document.querySelector("main");
 
 function generate_unit_block(data) {
+  if (data[0] != house) {
+    house = data[0];
+
+    let mechanic = document.createElement("div");
+    let header = document.createElement("div");
+    let special = document.createElement("div");
+    mechanic.className = 'mechanic'
+    header.innerText = `${house} Mechanics`;
+    header.className = "title";
+    if ("GargamoxDeadsoulsAbhorrers".includes(data[0])) {
+      header.style.color = "black";
+    }
+    header.style.backgroundColor = colors[data[0]];
+    special.className = 'row'
+    mechanic.appendChild(header);
+    mechanic.appendChild(special);
+    mechanics = mechanics.filter(m => m[0] == house);
+    mechanics.forEach((d, i) => {
+      s = document.createElement("div");
+      if (i == 1) { s.className = mechanics[i + 1] ? "mid" : "end"; }
+
+      let header = document.createElement("div");
+      let desc = document.createElement("div");
+      header.innerText = d[1];
+      header.className = "header";
+      desc.innerText = d[2];
+      desc.className = "special";
+      s.appendChild(header);
+      s.appendChild(desc);
+      special.appendChild(s);
+    })
+    main.appendChild(mechanic);
+  }
+
   let unit = document.createElement("div");
   unit.className = "unit";
 
@@ -267,7 +306,7 @@ function generate_unit_block(data) {
   });
   unit.appendChild(special);
 
-  document.querySelector("main").appendChild(unit);
+  main.appendChild(unit);
 }
 
 const xhr = new XMLHttpRequest();
@@ -278,6 +317,13 @@ upgrades = xhr.response
   .split("\n")
   .map((u) => u.split("\t"));
 upgrades.shift();
+xhr.open("GET", "./units/mechanics.tsv", false);
+xhr.send();
+mechanics = xhr.response
+  .replace(/\"/g, "")
+  .split("\n")
+  .map((u) => u.split("\t"));
+mechanics.shift();
 xhr.open("GET", "./units/unit_list.tsv", true);
 xhr.onload = () => {
   let data = xhr.response.replace(/\"/g, "").split("\n");
