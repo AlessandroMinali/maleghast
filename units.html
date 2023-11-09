@@ -286,7 +286,7 @@ function generate_unit_block(data) {
     let header = document.createElement("div");
     let desc = document.createElement("div");
 
-    header.innerText = d.slice(0, index == -1 ? undefined : index);
+    header.innerText = d.trim().slice(0, index == -1 ? d.length : index);
     header.className = "header";
     let input = document.createElement('input');
     input.type = 'radio';
