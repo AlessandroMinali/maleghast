@@ -23,6 +23,7 @@ main{font-family:sans-serif}
 .units{display:flex;flex-wrap:wrap}
 .unit{flex:1 0 475px}
 .unit,.mechanic{margin:1px;border:1px solid black}
+.units>.unit:last-child input{display:none}
 .title{text-align:center;color:white;font-size:large;padding:1px}
 .header{background:#b8b8b8;font-weight:bold;text-align:center;padding:1px}
 .row{display:flex}
@@ -173,9 +174,10 @@ function generate_unit_block(data) {
     t.appendChild(span);
     t.appendChild(span2);
     if (d[0] == "+") {
+      span.innerText = d;
       let select = document.createElement("select");
       let o = document.createElement("option");
-      o.innerText = d;
+      o.innerText = "";
       select.appendChild(o);
       upgrades
         .filter((u) => u[0] == data[0] && u[1] == "Trait")
@@ -187,8 +189,7 @@ function generate_unit_block(data) {
       t.appendChild(select);
       select.addEventListener("change", function (e) {
         d = e.target.value;
-        e.target.options[0].remove();
-        e.target.selectedIndex = -1;
+        e.target.selectedIndex = 0;
 
         d = d.split(": ");
 
@@ -232,9 +233,10 @@ function generate_unit_block(data) {
     line.appendChild(desc);
     acts.appendChild(line);
     if (d[0] == "+") {
+      name.innerText = d;
       let select = document.createElement("select");
       let o = document.createElement("option");
-      o.innerText = d;
+      o.innerText = "";
       select.appendChild(o);
       upgrades
         .filter((u) => u[0] == data[0] && u[1] == "Act")
@@ -256,8 +258,7 @@ function generate_unit_block(data) {
           tags.innerText = line1[1];
           desc.innerText = d.slice(index);
         }
-        e.target.options[0].remove();
-        e.target.selectedIndex = -1;
+        e.target.selectedIndex = 0;
       });
     } else {
       index = d.search(/(On hit|Effect|Line|Splash|Stance)/);
@@ -285,23 +286,18 @@ function generate_unit_block(data) {
 
     let header = document.createElement("div");
     let desc = document.createElement("div");
-
-    header.innerText = d.trim().slice(0, index == -1 ? d.length : index);
-    header.className = "header";
-    let input = document.createElement('input');
-    input.type = 'radio';
-    input.name = `${data[1]}_special`;
-    header.appendChild(input);
     s.appendChild(header);
     s.appendChild(desc);
 
+    header.className = "header";
+    desc.className = "special";
     if (d[0] == "+") {
-      desc.className = "special";
+      header.innerText = d.trim().slice(0, d.length);
 
       let select = document.createElement("select");
       let o = document.createElement("option");
       o.value = "";
-      o.innerText = d;
+      o.innerText = "";
       select.appendChild(o);
       upgrades
         .filter((u) => u[0] == data[0] && u[1] == "Soul")
@@ -311,20 +307,22 @@ function generate_unit_block(data) {
           o.value = u[3];
           select.appendChild(o);
         });
-
       s.appendChild(select);
       select.addEventListener("change", function (e) {
         let v = e.target.value;
         let sep = v.indexOf(":");
         header.innerText = v.slice(0, sep);
         desc.innerText = v.slice(sep + 1);
-        e.target.options[0].remove();
-        e.target.selectedIndex = -1;
+        e.target.selectedIndex = 0;
       });
     } else if (index > -1) {
+      header.innerText = d.trim().slice(0, index);
       desc.innerText = d.slice(index + 1);
-      desc.className = "special";
     }
+    let input = document.createElement('input');
+    input.type = 'radio';
+    input.name = `${data[1]}_special`;
+    header.appendChild(input);
 
     special.appendChild(s);
   });
