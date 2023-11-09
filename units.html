@@ -19,10 +19,10 @@
 body{margin:3px;padding:0}
 body>div,footer{font-size:10px;}
 footer{float:right;margin:3px;}
-main{display:flex;flex-wrap:wrap;font-family:sans-serif}
+main{font-family:sans-serif}
+.units{display:flex;flex-wrap:wrap}
 .unit{flex:1 0 475px}
 .unit,.mechanic{margin:1px;border:1px solid black}
-.mechanic{width:100%}
 .title{text-align:center;color:white;font-size:large;padding:1px}
 .header{background:#b8b8b8;font-weight:bold;text-align:center;padding:1px}
 .row{display:flex}
@@ -49,6 +49,7 @@ h1,body>div{display:none}
 <body>
   <h1>MALEGHAST UNIT BLOCKS</h1>
   <div>Update 1(Nov 4 2023)<br/>Best print settings: Orientation="Landscape" and Layout>Pages per Sheet="4", toggle Print Backgrounds to add/remove colored headings</div>
+  <div>Click headers to hide/show text</div>
   <main></main>
   <footer>
     <span style="font-family: sans-serif;">
@@ -68,30 +69,47 @@ const colors = {
   Igorri: "#a000ff",
 };
 const labels = ["MV", "HP", "DF", "ARM"];
-let house;
+let house, house_block, units;
 const main = document.querySelector("main");
 
 function generate_unit_block(data) {
   if (data[0] != house) {
+    if (house_block) {
+      main.appendChild(house_block);
+    }
     house = data[0];
+    house_block = document.createElement("div");
+    let header = document.createElement("div");
+    header.innerText = house;
+    header.className = "title unit";
+    if ("GargamoxDeadsoulsAbhorrers".includes(data[0])) {
+      header.style.color = "black";
+    }
+    header.style.backgroundColor = colors[data[0]];
+    house_block.appendChild(header);
 
     let mechanic = document.createElement("div");
-    let header = document.createElement("div");
-    let special = document.createElement("div");
-    mechanic.className = 'mechanic'
-    header.innerText = `${house} Mechanics`;
+    mechanic.className = "mechanic";
+
+    header = document.createElement("div");
+    header.innerText = "Special Mechanics";
     header.className = "title";
     if ("GargamoxDeadsoulsAbhorrers".includes(data[0])) {
       header.style.color = "black";
     }
     header.style.backgroundColor = colors[data[0]];
-    special.className = 'row'
+
+    let special = document.createElement("div");
+    special.className = "row";
+
     mechanic.appendChild(header);
     mechanic.appendChild(special);
-    m = mechanics.filter(m => m[0] == house);
+    m = mechanics.filter((m) => m[0] == house);
     m.forEach((d, i) => {
       s = document.createElement("div");
-      if (i == 1) { s.className = m[i + 1] ? "mid" : "end"; }
+      if (i == 1) {
+        s.className = m[i + 1] ? "mid" : "end";
+      }
 
       let header = document.createElement("div");
       let desc = document.createElement("div");
@@ -102,13 +120,15 @@ function generate_unit_block(data) {
       s.appendChild(header);
       s.appendChild(desc);
       special.appendChild(s);
-    })
-    main.appendChild(mechanic);
+    });
+    house_block.appendChild(mechanic);
+    units = document.createElement("div");
+    units.className = "units";
+    house_block.appendChild(units);
   }
 
   let unit = document.createElement("div");
   unit.className = "unit";
-
   let header = document.createElement("div");
   header.innerText = `${data[1]} (${data[2]})`;
   header.className = "title";
@@ -168,7 +188,6 @@ function generate_unit_block(data) {
         d = e.target.value;
         e.target.options[0].remove();
         e.target.selectedIndex = -1;
-
 
         d = d.split(": ");
 
@@ -305,8 +324,7 @@ function generate_unit_block(data) {
     special.appendChild(s);
   });
   unit.appendChild(special);
-
-  main.appendChild(unit);
+  units.appendChild(unit);
 }
 
 const xhr = new XMLHttpRequest();
@@ -329,6 +347,26 @@ xhr.onload = () => {
   let data = xhr.response.replace(/\"/g, "").split("\n");
   data.shift();
   data.forEach((d) => generate_unit_block(d.split("\t")));
+  main.appendChild(house_block);
+
+  document.querySelectorAll(".title").forEach((el) => {
+    el.addEventListener("click", function (e) {
+      let current = e.target;
+      while (current.nextElementSibling) {
+        if (current.nextElementSibling.style.display == "none") {
+          current.nextElementSibling.style.display =
+            current.nextElementSibling.getAttribute("display");
+        } else {
+          current.nextElementSibling.setAttribute(
+            "display",
+            current.nextElementSibling.style.display,
+          );
+          current.nextElementSibling.style.display = "none";
+        }
+        current = current.nextElementSibling;
+      }
+    });
+  });
 };
 xhr.send();
   </script>
