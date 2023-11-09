@@ -9,12 +9,12 @@ C.A.R.C.A.S.S.	Act	-	Superkick: Melee. Effect: Push an adjacent unit 3. Foes gai
 C.A.R.C.A.S.S.	Act	-	"LV4 Living Cannon: Attack, range 2-6, reload*. On hit: 1 fire damage, Splash (target): 1 fire damage. Headshot: All affected units gain 1 vulnerable. *Effect: Must reload twice before this is usable."
 C.A.R.C.A.S.S.	Act	-	"SG88 Two Barrel Shotgun: Attack, range 1-2, reload. On hit: 1 damage, then 1 damage. Effect: push 1, then push 1. Headshot: Reload."
 C.A.R.C.A.S.S.	Act	-	"Unholy Sixgun: Attack, range 2-4, reload. On hit: 1 damage. Headshot: this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 4."
-C.A.R.C.A.S.S.	Soul	1	"Double Tap: Any turn. Trigger: you reduce a unit to exactly 1 hp. Effect: you may immediately activate this ability to deal 1 damage to it, ignoring armor."
-C.A.R.C.A.S.S.	Soul	1	Frag Bullet: Own turn. Trigger: You hit an attack. Effect: Target gains 2 vulnerable after the ability resolves.
-C.A.R.C.A.S.S.	Soul	2	"Bullet Hustle: Any turn. Trigger: After any unit MOVEs. Effect: Step 2, then deal 1 damage to a unit in range 3."
-C.A.R.C.A.S.S.	Soul	3	"Overwatch: Own turn. Effect: Reload. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn."
-C.A.R.C.A.S.S.	Soul	4	"Bullet Sonata: Own turn. Effect: Every foe in range 2 takes 1 damage, ignoring armor, and is pushed 1."
-C.A.R.C.A.S.S.	Soul	6	"S.T.G.: Own turn. Trigger: Headshot. Effect: Obliterate target unit, sending them Straight to the Grave."
+C.A.R.C.A.S.S.	Soul	1	"Double Tap (1 SOUL): Any turn. Trigger: you reduce a unit to exactly 1 hp. Effect: you may immediately activate this ability to deal 1 damage to it, ignoring armor."
+C.A.R.C.A.S.S.	Soul	1	Frag Bullet (1 SOUL): Own turn. Trigger: You hit an attack. Effect: Target gains 2 vulnerable after the ability resolves.
+C.A.R.C.A.S.S.	Soul	2	"Bullet Hustle (2 SOUL): Any turn. Trigger: After any unit MOVEs. Effect: Step 2, then deal 1 damage to a unit in range 3."
+C.A.R.C.A.S.S.	Soul	3	"Overwatch (3 SOUL): Own turn. Effect: Reload. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn."
+C.A.R.C.A.S.S.	Soul	4	"Bullet Sonata (4 SOUL): Own turn. Effect: Every foe in range 2 takes 1 damage, ignoring armor, and is pushed 1."
+C.A.R.C.A.S.S.	Soul	6	"S.T.G. (6 SOUL): Own turn. Trigger: Headshot. Effect: Obliterate target unit, sending them Straight to the Grave."
 Goregrinders	Trait	-	"Nerve Twitch: At 3 hp or lower, DF increases to 5+."
 Goregrinders	Trait	-	Blood Drinker: Slaying a unit clears a negative token.
 Goregrinders	Trait	-	"Blood Rush: At 3 hp or lower, gain retaliation."
@@ -25,12 +25,12 @@ Goregrinders	Act	-	"Apoplexy: Self. Gain 1 strength and 1 berserk, then double a
 Goregrinders	Act	-	"Pilebunker: Attack, melee. On hit: 2 damage, then 1 fire damage again. Effect: This attack rolls -1D."
 Goregrinders	Act	-	"Saw Tooothed Slayer Axe: Line 4. Line: 1 damage. If only one unit is caught in the area, this damage ignores armor and this line destroys walls."
 Goregrinders	Act	-	"Spine Devil Blade: Attack, melee. On hit: 1 damage. Effect: You may spend up to three total strength and berserk tokens to increase this attack's damage on hit by +1 per token spent. If you do, take damage equal to the total number of tokens spent, which cannot slay you."
-Goregrinders	Soul	1	"Hellrider Kick: Own or allied turn. Effect: MOVE with free movement, then deal 1 fire damage to an adjacent foe."
-Goregrinders	Soul	1	"Overclock: Own or allied turn, range 3. Effect: Self or unit in range gains 2 speed. If the unit is at 1 hp or lower, splash (target): 1 fire damage."
-Goregrinders	Soul	2	Gorebather: Any turn. Trigger: You slay a unit. Effect: Step 1. All allied units anywhere may step 1.
-Goregrinders	Soul	3	"Killing Spree: Any turn. Trigger: After a unit ACTs. Effect: Step 1, then deal 1 damage to an adjacent unit, ignoring armor. If that unit is slain, repeat this effect. It can repeat any number of times."
-Goregrinders	Soul	4	"Blood Boil: Any turn. Trigger: Unit is slain. Effect: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, obliterating it, and dealing splash (self): 1 fire damage."
-Goregrinders	Soul	6	Devil Impact: Own turn. Deal 6 devil damage to an adjacent unit. Then deal 6 devil damage to yourself.
+Goregrinders	Soul	1	"Hellrider Kick (1 SOUL): Own or allied turn. Effect: MOVE with free movement, then deal 1 fire damage to an adjacent foe."
+Goregrinders	Soul	1	"Overclock (1 SOUL): Own or allied turn, range 3. Effect: Self or unit in range gains 2 speed. If the unit is at 1 hp or lower, splash (target): 1 fire damage."
+Goregrinders	Soul	2	Gorebather (2 SOUL): Any turn. Trigger: You slay a unit. Effect: Step 1. All allied units anywhere may step 1.
+Goregrinders	Soul	3	"Killing Spree (3 SOUL): Any turn. Trigger: After a unit ACTs. Effect: Step 1, then deal 1 damage to an adjacent unit, ignoring armor. If that unit is slain, repeat this effect. It can repeat any number of times."
+Goregrinders	Soul	4	"Blood Boil (4 SOUL): Any turn. Trigger: Unit is slain. Effect: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, obliterating it, and dealing splash (self): 1 fire damage."
+Goregrinders	Soul	6	Devil Impact (6 SOUL): Own turn. Deal 6 devil damage to an adjacent unit. Then deal 6 devil damage to yourself.
 Gargamox	Trait	-	"Pollution Shroud: While standing in a hazard, you have cover."
 Gargamox	Trait	-	"Corruptor: After you MOVE, create a hazard in an adjacent space."
 Gargamox	Trait	-	Spreader: Infect abilities that you use or that target you may jump an extra time.
@@ -41,12 +41,12 @@ Gargamox	Act	-	Ceaseless Spew: Line 6. Effect: 1 plague. Pull all affected units
 Gargamox	Act	-	"Carniphagous Blade: Attack, melee. On hit: 1 damage and Infect: 1 plague to foes and 1 strength to self or allied units."
 Gargamox	Act	-	"Scourge: Attack, Range 2-4. On hit: 1 damage and create a hazard under target (4+) and slow them (6+) twice."
 Gargamox	Act	-	"Necrocide: Attack, Range 2-3. On hit: 1 toxic damage. Infect: 1 toxic damage. Effect: After this ability resolves, gain +1 strength for each time this infected a unit."
-Gargamox	Soul	1	"Purge Guts: Self or Allied turn, Range 3. Effect: Remove up to three plague tokens from self or allied unit and grant them to any other adjacent unit to target, then remove a negative token for each plague token removed."
-Gargamox	Soul	1	"Insides Out: Curse, Any turn, Range 3. Trigger: Turn start. Effect: Unit gains 1 slow and creates a hazard under themselves at the end of this turn."
-Gargamox	Soul	2	"Fecundity: Any turn, Range 3. Trigger: Turn start. Effect: Double all plague tokens on a unit. If this puts them at 5 or more tokens, they also explode with splash (target): 1 toxic damage."
-Gargamox	Soul	3	"Unholy Vapors: Curse, Any turn, Range 3. Trigger: Target turn start. Effect: At the end of the targeted unit's turn, targeted unit takes 1 toxic damage, ignoring armor, for every hazard in range 2 of them."
-Gargamox	Soul	4	"Praise the Filth: Own turn, Range 2. Effect: Place one hazard in range for every other hazard in range."
-Gargamox	Soul	6	Mox Populi: Own turn. Effect: Remove up to four corpse tokens or hazards and replace them with a SCUM unit. These SCUM have no SOUL.
+Gargamox	Soul	1	"Purge Guts (1 SOUL): Self or Allied turn, Range 3. Effect: Remove up to three plague tokens from self or allied unit and grant them to any other adjacent unit to target, then remove a negative token for each plague token removed."
+Gargamox	Soul	1	"Insides Out (1 SOUL): Curse, Any turn, Range 3. Trigger: Turn start. Effect: Unit gains 1 slow and creates a hazard under themselves at the end of this turn."
+Gargamox	Soul	2	"Fecundity (2 SOUL): Any turn, Range 3. Trigger: Turn start. Effect: Double all plague tokens on a unit. If this puts them at 5 or more tokens, they also explode with splash (target): 1 toxic damage."
+Gargamox	Soul	3	"Unholy Vapors (3 SOUL): Curse, Any turn, Range 3. Trigger: Target turn start. Effect: At the end of the targeted unit's turn, targeted unit takes 1 toxic damage, ignoring armor, for every hazard in range 2 of them."
+Gargamox	Soul	4	"Praise the Filth (4 SOUL): Own turn, Range 2. Effect: Place one hazard in range for every other hazard in range."
+Gargamox	Soul	6	Mox Populi (6 SOUL): Own turn. Effect: Remove up to four corpse tokens or hazards and replace them with a SCUM unit. These SCUM have no SOUL.
 Deadsouls	Trait	-	"Teleport: When MOVEing the second time or more in a turn, can remove this unit from the battlefield and place it in any free space in range 4."
 Deadsouls	Trait	-	Puppet Master: May use body block from within range 2 instead of adjacent.
 Deadsouls	Trait	-	Maggot Destroyer: +1D on attacks and ignores cover against Doomed units.
@@ -57,12 +57,12 @@ Deadsouls	Act	-	Frozen Hell: Range 2. Create up to three spaces of adverse terra
 Deadsouls	Act	-	"Great Urgal Blade: Attack, melee. On hit: 1 damage. Effect: At round 5 or later, deals 4 curse damage on hit instead."
 Deadsouls	Act	-	"Bloody Flail: Attack, range 2-2. On hit: 1 damage. Effect: Pull all foes in range 1 space, then splash (self): 1 curse damage."
 Deadsouls	Act	-	"Lathean Devil Whip: Attack, range 2-3. On hit: 1 curse damage. Effect: Cannot benefit from strength. Instead, may remove up to three weak tokens from target to increase curse damage by +1 per weak token removed."
-Deadsouls	Soul	1	"Twist Sinews: Curse, Any turn, Range 2-4. Trigger: Start of turn. Effect: Pull unit 1 in any direction."
-Deadsouls	Soul	1	"Writhing Curse: Foe turn, Curse, Range 4. Trigger: Turn start. Effect: At the end of their turn, foe inflicts splash (self) 1 curse damage and 1 weak, only affecting their allies."
-Deadsouls	Soul	2	"Disincorporate: Own or allied turn. Effect: Remove self and an adjacent allied unit, then place self in a free space in range 3, then place ally adjacent. If there is no room to place allies, return them at their original location."
-Deadsouls	Soul	3	Eternal Curse: Any turn. Trigger: A unit is slain. Effect: Transfer all negative tokens to a different unit anywhere.
-Deadsouls	Soul	4	"Malebolge: Own turn. Effect: Scour the battlefield with frozen wind, pulling all foes 1 space in the same direction. Foes that would be pulled into walls or adverse terrain take 1 damage."
-Deadsouls	Soul	6	"Great Satania: Own turn, Range 2. Effect: Doom all enemy units in range. All Doomed enemy units instead take 1 curse damage, once, per Doom token they have."
+Deadsouls	Soul	1	"Twist Sinews (1 SOUL): Curse, Any turn, Range 2-4. Trigger: Start of turn. Effect: Pull unit 1 in any direction."
+Deadsouls	Soul	1	"Writhing Curse (1 SOUL): Foe turn, Curse, Range 4. Trigger: Turn start. Effect: At the end of their turn, foe inflicts splash (self) 1 curse damage and 1 weak, only affecting their allies."
+Deadsouls	Soul	2	"Disincorporate (2 SOUL): Own or allied turn. Effect: Remove self and an adjacent allied unit, then place self in a free space in range 3, then place ally adjacent. If there is no room to place allies, return them at their original location."
+Deadsouls	Soul	3	Eternal Curse (3 SOUL): Any turn. Trigger: A unit is slain. Effect: Transfer all negative tokens to a different unit anywhere.
+Deadsouls	Soul	4	"Malebolge (4 SOUL): Own turn. Effect: Scour the battlefield with frozen wind, pulling all foes 1 space in the same direction. Foes that would be pulled into walls or adverse terrain take 1 damage."
+Deadsouls	Soul	6	"Great Satania (6 SOUL): Own turn, Range 2. Effect: Doom all enemy units in range. All Doomed enemy units instead take 1 curse damage, once, per Doom token they have."
 Abhorrers	Trait	-	Winter Rose Stance: Stance: (Round 4+): Attacks cannot miss (all misses turn into hits).
 Abhorrers	Trait	-	Corpse Violet Stance: Stance: (Round 4+): Gain either physical or magical armor (choose).
 Abhorrers	Trait	-	Royal Chrysanthemum Stance: Stance (Round 4+): May step 2 after ACTing.
@@ -73,12 +73,12 @@ Abhorrers	Act	-	"Decree of Forbiddance: Curse, Self. Effect: Until end of next t
 Abhorrers	Act	-	"Holy Water Flail: Attack, Range 2-3. On hit: 1 holy damage and splash (target): 1 holy damage. Stance (Round 3+): and create a hazard under target (Round 5+) all targets in the area."
 Abhorrers	Act	-	"Relic Lance: Attack, melee. On hit: 2 damage. Stance: May step spaces equal to the round number, in a straight line, before the attack. On hit, push target half that many spaces."
 Abhorrers	Act	-	"Starmetal Shuriken: Attack, Range 2-5. On hit: 1 damage. Stance: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead."
-Abhorrers	Soul	1	"Sword Art: Drifting Blossoms: Any turn. Trigger: A unit MOVEs, and that move resolves. Effect: Stance: Step spaces equal to the round number."
-Abhorrers	Soul	2	"Sword Art: Safflower Cut: Own or allied turn. Line, Stance: Cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1."
-Abhorrers	Soul	2	"Grace: Own or allied turn, Range 3. Trigger: Turn start. Effect: Unit becomes curseproof until end of its next turn and attacks against it gain -1D for the duration."
-Abhorrers	Soul	3	"Sword Art: Winter Sprout: Any turn. Trigger: This unit takes damage from an ACT ability, and that ability resolves. Effect: Splash (self): remove 1 negative token on self or gain 1 vitality for every foe in the splash area. Stance (Round 4+): Both effects trigger."
-Abhorrers	Soul	4	Supreme Sword Art: Merciful Snowdrop Cut: Own Turn. Effect: Splash (self): 1 holy damage. Stance (Round 4+): 2 holy damage instead. (Round 6+): 3 holy damage instead.
-Abhorrers	Soul	6	Resurrection: Any turn. Trigger: Allied unit is slain. Effect: Return unit to life at 1 hp at the end of the turn. Stance (Round 3+): and it gains 1 vitality (Round 5+) 3 vitality instead.
+Abhorrers	Soul	1	"Sword Art (1 SOUL): Drifting Blossoms: Any turn. Trigger: A unit MOVEs, and that move resolves. Effect: Stance: Step spaces equal to the round number."
+Abhorrers	Soul	2	"Sword Art (2 SOUL): Safflower Cut: Own or allied turn. Line, Stance: Cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1."
+Abhorrers	Soul	2	"Grace (2 SOUL): Own or allied turn, Range 3. Trigger: Turn start. Effect: Unit becomes curseproof until end of its next turn and attacks against it gain -1D for the duration."
+Abhorrers	Soul	3	"Sword Art (3 SOUL): Winter Sprout: Any turn. Trigger: This unit takes damage from an ACT ability, and that ability resolves. Effect: Splash (self): remove 1 negative token on self or gain 1 vitality for every foe in the splash area. Stance (Round 4+): Both effects trigger."
+Abhorrers	Soul	4	Supreme Sword Art (4 SOUL): Merciful Snowdrop Cut: Own Turn. Effect: Splash (self): 1 holy damage. Stance (Round 4+): 2 holy damage instead. (Round 6+): 3 holy damage instead.
+Abhorrers	Soul	6	Resurrection (6 SOUL): Any turn. Trigger: Allied unit is slain. Effect: Return unit to life at 1 hp at the end of the turn. Stance (Round 3+): and it gains 1 vitality (Round 5+) 3 vitality instead.
 Igorri	Trait	-	"Accelerate Evolution: At turn end, may remove one token from this unit and grant to a unit in range 2."
 Igorri	Trait	-	Rapid Move: May remove a mutation token at start of end of own turn to step 2.
 Igorri	Trait	-	Ancillary Limbs: May remove a mutation token on self to grant +1D on any attack.
@@ -89,9 +89,9 @@ Igorri	Act	-	"Inject Stimulant: Range 3. Effect: Choose a unit in range. That un
 Igorri	Act	-	"Biotoxin Injector: Attack, Range 2-5. On hit: 1 toxin damage. Effect: At end of target's next turn, they explode for a splash (target) effect for 1 toxin damage. Your allies in the area mutate instead of taking damage."
 Igorri	Act	-	"Mutagen Injector: Attack, Range 2-5. On hit: May remove one positive token from target, then deal 1 toxin damage. Spare parts: Repeat this effect once."
 Igorri	Act	-	"Chaos Beam: Line 3. Effect: Line: 1 fire damage and inflict 1 vulnerable, (3-4) OR 1 toxic damage and inflict 1 slow, (5-6) OR 1 curse damage and inflict 1 weak. Spare parts: Roll +1D for effect per corpse consumed and choose any result."
-Igorri	Soul	1	"Flesh Jump: Own or allied turn. Range 3. Effect: Swap places with an allied unit, then both of you mutate."
-Igorri	Soul	2	"Grow Bonus Legs: Own or allied turn. Range 3. Effect: Remove any number of mutation tokens on self or target unit, then target may step 2 per token removed with free movement."
-Igorri	Soul	2	"Grow Bonus Limbs: Own or allied turn. Range 3. Trigger: Turn start. Effect: Remove any number of mutation tokens from target, then target gains +1D on attacks this turn per token removed."
-Igorri	Soul	3	"Recycle: Curse, Any turn. Trigger: Turn end. Effect: Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are obliteratd. Create up to 3 corpse tokens under their space or in free adjacent spaces."
-Igorri	Soul	4	"Devolve: Curse, Foe turn. Range 3. Trigger: Turn start. Effect: Inflict 1 slow, weak, and vulnerable on a foe (5+) twice."
-Igorri	Soul	6	"Final Form: Own turn. Trigger: Turn start. Effect: Increase MV to 6, DF to 6+, gain 6 strength, become curseproof, and gain SUPER. Keep any damage taken. At the end of your next turn, your form destabilizes and you are obliterated."
+Igorri	Soul	1	"Flesh Jump (1 SOUL): Own or allied turn. Range 3. Effect: Swap places with an allied unit, then both of you mutate."
+Igorri	Soul	2	"Grow Bonus Legs (2 SOUL): Own or allied turn. Range 3. Effect: Remove any number of mutation tokens on self or target unit, then target may step 2 per token removed with free movement."
+Igorri	Soul	2	"Grow Bonus Limbs (2 SOUL): Own or allied turn. Range 3. Trigger: Turn start. Effect: Remove any number of mutation tokens from target, then target gains +1D on attacks this turn per token removed."
+Igorri	Soul	3	"Recycle (3 SOUL): Curse, Any turn. Trigger: Turn end. Effect: Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are obliteratd. Create up to 3 corpse tokens under their space or in free adjacent spaces."
+Igorri	Soul	4	"Devolve (4 SOUL): Curse, Foe turn. Range 3. Trigger: Turn start. Effect: Inflict 1 slow, weak, and vulnerable on a foe (5+) twice."
+Igorri	Soul	6	"Final Form (6 SOUL): Own turn. Trigger: Turn start. Effect: Increase MV to 6, DF to 6+, gain 6 strength, become curseproof, and gain SUPER. Keep any damage taken. At the end of your next turn, your form destabilizes and you are obliterated."
