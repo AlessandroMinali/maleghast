@@ -127,7 +127,9 @@ function generate_unit_block(data) {
       t.appendChild(select);
       select.addEventListener("change", function (e) {
         d = e.target.value;
+        e.target.options[0].remove();
         e.target.selectedIndex = -1;
+
 
         d = d.split(": ");
 
@@ -195,6 +197,7 @@ function generate_unit_block(data) {
           tags.innerText = line1[1];
           desc.innerText = d.slice(index);
         }
+        e.target.options[0].remove();
         e.target.selectedIndex = -1;
       });
     } else {
@@ -252,6 +255,7 @@ function generate_unit_block(data) {
         let sep = v.indexOf(":");
         header.innerText = v.slice(0, sep);
         desc.innerText = v.slice(sep + 1);
+        e.target.options[0].remove();
         e.target.selectedIndex = -1;
       });
     } else if (index > -1) {
