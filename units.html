@@ -35,9 +35,10 @@ main{font-family:sans-serif}
 ul{margin:0}
 h1{text-align:center;font-family:myFont}
 select,option{font-size:16px;width: 100%}
+input{vertical-align:top}
 @media print {
 main{display:block}
-h1,body>div{display:none}
+h1,body>div,input[type=radio]:not(:checked),select{display:none}
 .title,.header{color:black;font-size:100%;}
 .unit{page-break-inside:avoid;border-bottom:0}
 .row,.row+.header,ul+.header{border:1px solid black;border-left:0;border-right:0}
@@ -287,6 +288,10 @@ function generate_unit_block(data) {
 
     header.innerText = d.slice(0, index == -1 ? undefined : index);
     header.className = "header";
+    let input = document.createElement('input');
+    input.type = 'radio';
+    input.name = `${data[1]}_special`;
+    header.appendChild(input);
     s.appendChild(header);
     s.appendChild(desc);
 
