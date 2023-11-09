@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
-  <link rel="preload" as='font' href='map/metalblackletter_v4.woff2'>
+  <link rel="preload" as='font' href='map/metalblackletter_v4.woff2' crossorigin>
+  <link rel="preload" as='document' href='units/necromancer_upgrades.tsv' crossorigin>
+  <link rel="preload" as='document' href='units/mechanics.tsv' crossorigin>
+  <link rel="preload" as='document' href='units/unit_list.tsv' crossorigin>
 
   <meta property=’og:title’ content='MALEGHAST UNIT BLOCKS'/>
   <meta property="og:image" content="https://alessandrominali.github.io/maleghast/units/image-min.png">
@@ -62,7 +65,7 @@ h1,body>div,input[type=radio]:not(:checked),select{display:none}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
   <script type="text/javascript">
-let upgrades, mechanics;
+let upgrades, mechanics, data;
 const colors = {
   "C.A.R.C.A.S.S.": "#f20caf",
   Goregrinders: "#ff772a",
@@ -331,24 +334,39 @@ function generate_unit_block(data) {
   units.appendChild(unit);
 }
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "./units/necromancer_upgrades.tsv", false);
-xhr.send();
-upgrades = xhr.response
-  .replace(/\"/g, "")
-  .split("\n")
-  .map((u) => u.split("\t"));
-upgrades.shift();
-xhr.open("GET", "./units/mechanics.tsv", false);
-xhr.send();
-mechanics = xhr.response
-  .replace(/\"/g, "")
-  .split("\n")
-  .map((u) => u.split("\t"));
-mechanics.shift();
-xhr.open("GET", "./units/unit_list.tsv", true);
-xhr.onload = () => {
-  let data = xhr.response.replace(/\"/g, "").split("\n");
+function ajax_call(url) {
+  return new Promise(function(resolve, reject) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          resolve(this.responseText);
+        } else {
+          reject('Call Failed');
+        }
+      }
+    };
+    xhttp.open("GET", url);
+    xhttp.send();
+  });
+}
+
+Promise.all([
+  ajax_call("units/unit_list.tsv"),
+  ajax_call("units/necromancer_upgrades.tsv"),
+  ajax_call("units/mechanics.tsv"),
+]).then((values) => {
+  upgrades = values[1]
+    .replace(/\"/g, "")
+    .split("\n")
+    .map((u) => u.split("\t"));
+  upgrades.shift();
+  mechanics = values[2]
+    .replace(/\"/g, "")
+    .split("\n")
+    .map((u) => u.split("\t"));
+  mechanics.shift()
+  data = values[0].replace(/\"/g, "").split("\n");
   data.shift();
   data.forEach((d) => generate_unit_block(d.split("\t")));
   main.appendChild(house_block);
@@ -371,7 +389,8 @@ xhr.onload = () => {
       }
     });
   });
-};
-xhr.send();
+});
+
+
   </script>
 </body>
