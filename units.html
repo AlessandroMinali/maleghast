@@ -88,10 +88,10 @@ function generate_unit_block(data) {
     special.className = 'row'
     mechanic.appendChild(header);
     mechanic.appendChild(special);
-    mechanics = mechanics.filter(m => m[0] == house);
-    mechanics.forEach((d, i) => {
+    m = mechanics.filter(m => m[0] == house);
+    m.forEach((d, i) => {
       s = document.createElement("div");
-      if (i == 1) { s.className = mechanics[i + 1] ? "mid" : "end"; }
+      if (i == 1) { s.className = m[i + 1] ? "mid" : "end"; }
 
       let header = document.createElement("div");
       let desc = document.createElement("div");
