@@ -251,7 +251,7 @@ function generate_unit_block(data) {
       line.appendChild(select);
       select.addEventListener("change", function (e) {
         d = e.target.value;
-        index = d.search(/(On hit|Effect:|Line|Splash|Stance)/);
+        index = d.search(/(On hit:|Effect:|Line:|Splash:|Stance:|Curse:)/);
         if (index == -1) {
           index = d.search(/\./);
           if (index != -1) { index += 1; }
@@ -267,7 +267,7 @@ function generate_unit_block(data) {
         e.target.selectedIndex = 0;
       });
     } else {
-      index = d.search(/(On hit|Effect:|Line|Splash|Stance)/);
+      index = d.search(/(On hit:|Effect:|Line:|Splash:|Stance:|Curse:)/);
       if (index == -1) {
         index = d.search(/\./);
         if (index != -1) { index += 1; }
