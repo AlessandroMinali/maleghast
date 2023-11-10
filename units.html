@@ -38,7 +38,7 @@ main{font-family:sans-serif}
 .mid:not(:first-child){margin-left:-1px}
 .end{border:1px solid black;border-top:0;border-bottom:0;border-right:0;}
 ul{margin:0}
-h1{text-align:center;font-family:myFont}
+h1{text-align:center;font-family:myFont;cursor:pointer}
 select,option{font-size:16px;width: 100%}
 input{vertical-align:top}
 @media print {
@@ -53,7 +53,7 @@ h1,body>div,input[type=radio]:not(:checked),select{display:none}
 </head>
 
 <body>
-  <h1>MALEGHAST UNIT BLOCKS</h1>
+  <h1 onclick="toggle_all()">MALEGHAST UNIT BLOCKS</h1>
   <div>Update 1(Nov 4 2023)<br/>Best print settings: Orientation="Landscape" and Layout>Pages per Sheet="4", toggle Print Backgrounds to add/remove colored headings</div>
   <div>Click headers to hide/show text</div>
   <main></main>
@@ -65,6 +65,12 @@ h1,body>div,input[type=radio]:not(:checked),select{display:none}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
   <script type="text/javascript">
+function toggle_all() {
+  document.querySelectorAll('.mechanic').forEach(el => el.style.display = toggle ? 'block' : 'none');
+  document.querySelectorAll('.units').forEach(el => el.style.display = toggle ? 'flex' : 'none');
+  toggle = !toggle;
+}
+let toggle = false;
 let upgrades, mechanics, data;
 const colors = {
   "C.A.R.C.A.S.S.": "#f20caf",
