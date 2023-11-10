@@ -320,9 +320,9 @@ function generate_unit_block(data) {
       s.appendChild(select);
       select.addEventListener("change", function (e) {
         let v = e.target.value;
-        let sep = v.indexOf(":");
-        header.innerText = v.slice(0, sep);
-        desc.innerText = v.slice(sep + 1);
+        let sep = v.indexOf("):");
+        header.innerText = v.slice(0, sep+1);
+        desc.innerText = v.slice(sep+2);
         e.target.selectedIndex = 0;
       });
     } else if (index > -1) {

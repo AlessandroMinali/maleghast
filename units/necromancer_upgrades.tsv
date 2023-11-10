@@ -64,7 +64,7 @@ Deadsouls	Soul	3	Eternal Curse (3 SOUL): Any turn. Trigger: A unit is slain. Eff
 Deadsouls	Soul	4	"Malebolge (4 SOUL): Own turn. Effect: Scour the battlefield with frozen wind, pulling all foes 1 space in the same direction. Foes that would be pulled into walls or adverse terrain take 1 damage."
 Deadsouls	Soul	6	"Great Satania (6 SOUL): Own turn, Range 2. Effect: Doom all enemy units in range. All Doomed enemy units instead take 1 curse damage, once, per Doom token they have."
 Abhorrers	Trait	-	Winter Rose Stance: Stance: (Round 4+): Attacks cannot miss (all misses turn into hits).
-Abhorrers	Trait	-	Corpse Violet Stance: Stance: (Round 4+): Gain either physical or magical armor (choose).
+Abhorrers	Trait	-	Corpse Violet Stance: Stance: (Round 4+): Gain either PHYS or MAG armor (choose).
 Abhorrers	Trait	-	Royal Chrysanthemum Stance: Stance (Round 4+): May step 2 after ACTing.
 Abhorrers	Act	-	"Grand Oath: Self. Effect: Splash (self). Allies in the area gain 1 vitality, then may convert any number of vitality to strength."
 Abhorrers	Act	-	"Redempta: Range 4. Effect: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 vitality per negative token removed."
@@ -73,11 +73,11 @@ Abhorrers	Act	-	"Decree of Forbiddance: Curse, Self. Effect: Until end of next t
 Abhorrers	Act	-	"Holy Water Flail: Attack, Range 2-3. On hit: 1 holy damage and splash (target): 1 holy damage. Stance (Round 3+): and create a hazard under target (Round 5+) all targets in the area."
 Abhorrers	Act	-	"Relic Lance: Attack, melee. On hit: 2 damage. Stance: May step spaces equal to the round number, in a straight line, before the attack. On hit, push target half that many spaces."
 Abhorrers	Act	-	"Starmetal Shuriken: Attack, Range 2-5. On hit: 1 damage. Stance: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead."
-Abhorrers	Soul	1	"Sword Art (1 SOUL): Drifting Blossoms: Any turn. Trigger: A unit MOVEs, and that move resolves. Effect: Stance: Step spaces equal to the round number."
-Abhorrers	Soul	2	"Sword Art (2 SOUL): Safflower Cut: Own or allied turn. Line, Stance: Cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1."
+Abhorrers	Soul	1	"Sword Art: Drifting Blossoms (1 SOUL): Any turn. Trigger: A unit MOVEs, and that move resolves. Effect: Stance: Step spaces equal to the round number."
+Abhorrers	Soul	2	"Sword Art: Safflower Cut (2 SOUL): Own or allied turn. Line, Stance: Cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1."
 Abhorrers	Soul	2	"Grace (2 SOUL): Own or allied turn, Range 3. Trigger: Turn start. Effect: Unit becomes curseproof until end of its next turn and attacks against it gain -1D for the duration."
-Abhorrers	Soul	3	"Sword Art (3 SOUL): Winter Sprout: Any turn. Trigger: This unit takes damage from an ACT ability, and that ability resolves. Effect: Splash (self): remove 1 negative token on self or gain 1 vitality for every foe in the splash area. Stance (Round 4+): Both effects trigger."
-Abhorrers	Soul	4	Supreme Sword Art (4 SOUL): Merciful Snowdrop Cut: Own Turn. Effect: Splash (self): 1 holy damage. Stance (Round 4+): 2 holy damage instead. (Round 6+): 3 holy damage instead.
+Abhorrers	Soul	3	"Sword Art: Winter Sprout (3 SOUL): Any turn. Trigger: This unit takes damage from an ACT ability, and that ability resolves. Effect: Splash (self): remove 1 negative token on self or gain 1 vitality for every foe in the splash area. Stance (Round 4+): Both effects trigger."
+Abhorrers	Soul	4	Supreme Sword Art: Merciful Snowdrop Cut (4 SOUL): Own Turn. Effect: Splash (self): 1 holy damage. Stance (Round 4+): 2 holy damage instead. (Round 6+): 3 holy damage instead.
 Abhorrers	Soul	6	Resurrection (6 SOUL): Any turn. Trigger: Allied unit is slain. Effect: Return unit to life at 1 hp at the end of the turn. Stance (Round 3+): and it gains 1 vitality (Round 5+) 3 vitality instead.
 Igorri	Trait	-	"Accelerate Evolution: At turn end, may remove one token from this unit and grant to a unit in range 2."
 Igorri	Trait	-	Rapid Move: May remove a mutation token at start of end of own turn to step 2.
