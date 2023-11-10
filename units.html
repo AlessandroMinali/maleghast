@@ -196,7 +196,7 @@ function generate_unit_block(data) {
         e.target.selectedIndex = 0;
 
         index = d.indexOf(':');
-        span.innerText = d.slice(0, index);
+        span.innerText = d.slice(0, index == -1 ? undefined : index);
         if (index > 0) {
           span.innerText += ":\xa0";
           span2.innerText = d.slice(index+1,);
