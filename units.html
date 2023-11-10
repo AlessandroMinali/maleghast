@@ -197,7 +197,7 @@ function generate_unit_block(data) {
 
         index = d.indexOf(':');
         span.innerText = d.slice(0, index);
-        if (d[1]) {
+        if (index > 0) {
           span.innerText += ":\xa0";
           span2.innerText = d.slice(index+1,);
         }
@@ -207,8 +207,8 @@ function generate_unit_block(data) {
     }
 
     index = d.indexOf(':');
-    span.innerText = d.slice(0, index);
-    if (d[1]) {
+    span.innerText = d.slice(0, index == -1 ? undefined : index);
+    if (index > 0) {
       span.innerText += ":\xa0";
       span2.innerText = d.slice(index+1,);
     }
