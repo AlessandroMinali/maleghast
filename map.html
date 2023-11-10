@@ -103,34 +103,6 @@ function gotPhoto(element) {
 }
 // modified end
 
-// https://kontext.tech/article/905/javascript-convert-svg-to-base64
-function getDataURL(url) {
-  return new Promise((resolve, reject) => {
-    var img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = function () {
-      var canvas = document.createElement('CANVAS');
-      var ctx = canvas.getContext('2d');
-      var dataURL;
-      canvas.height = this.naturalHeight;
-      canvas.width = this.naturalWidth;
-      ctx.drawImage(this, 0, 0);
-      dataURL = canvas.toDataURL("image/png");
-      resolve(dataURL);
-    };
-
-    img.onerror = function () {
-      resolve(url);
-    };
-
-    img.src = url;
-    if (img.complete || img.complete === undefined) {
-      img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
-      img.src = url;
-    }
-  });
-}
-
 function setBrush(s) {
   sprites = s;
   document.querySelectorAll('#brushesContainer div:not(:first-child)').forEach(el => el.remove());
