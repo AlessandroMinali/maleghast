@@ -204,7 +204,7 @@ function generate_unit_block(data) {
         index = d.indexOf(':');
         span.innerText = d.slice(0, index == -1 ? undefined : index);
         if (index > 0) {
-          span.innerText += ":\xa0";
+          span.innerText += ":";
           span2.innerText = d.slice(index+1,);
         }
       });
@@ -215,7 +215,7 @@ function generate_unit_block(data) {
     index = d.indexOf(':');
     span.innerText = d.slice(0, index == -1 ? undefined : index);
     if (index > 0) {
-      span.innerText += ":\xa0";
+      span.innerText += ":";
       span2.innerText = d.slice(index+1,);
     }
     traits.appendChild(t);
