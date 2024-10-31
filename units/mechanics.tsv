@@ -14,3 +14,5 @@ Abhorrers	Miracle	"A unit affected by a Miracle has a 5+ effect chance to instan
 Abhorrers	Stance	"An ability with stance gains different effect on odd, even, or special numbered round."
 Igorri	Spare Parts	"If an ability has spare parts, the unit may absorb any number of adjacent corpses at the start of this ability to grant it additional effects, removing those corpses."
 Igorri	Mutate	"When a unit mutates, it gains a mutation token. Mutation tokens can be discarded instead of discarding any other other token. Mutation tokens can be a stand-in and act as a 'copy' for any other token, allowing you to keep the original."
+Steeplewracks	Dive Bomb	"Once a round, at the end of own or an allied turn, a single steeplewrack unit may MOVE for free."
+Steeplewracks	Rip Apart (X)	"This ability gains extra bonuses if X or more allied units or walls are adjacent to the target, including this one."
