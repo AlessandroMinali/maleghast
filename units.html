@@ -74,6 +74,10 @@ a{color:red}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
   <script type="text/javascript">
+if (window?.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.toggle('light');
+}
+
 function toggle_all() {
   document.querySelectorAll('.mechanic').forEach(el => el.style.display = toggle ? 'block' : 'none');
   document.querySelectorAll('.units').forEach(el => el.style.display = toggle ? 'flex' : 'none');
