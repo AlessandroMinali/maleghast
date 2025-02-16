@@ -74,8 +74,8 @@ a{color:red}
     <a href="https://tombloom.itch.io/magnagothica-maleghast" target="_blank">Magnagothica: Maleghast</a>
   </footer>
   <script type="text/javascript">
-if (window?.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.toggle('light');
+if (window?.matchMedia('(prefers-color-scheme: dark)').matches || (new URLSearchParams(window.location.search).get('dark') == "1")) {
+  document.body.classList.toggle('light');
 }
 
 function toggle_all() {
