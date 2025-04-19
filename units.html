@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <meta charset="utf-8" />
   <link rel="preload" as='font' href='map/metalblackletter_v4.woff2' crossorigin>
   <link rel="preload" as='document' href='units/unit_list.tsv' crossorigin>
   <link rel="preload" as='document' href='units/necromancer_upgrades.tsv' crossorigin>
@@ -394,7 +395,7 @@ Promise.all([
   mechanics.shift()
   data = values[0].replace(/\"/g, "").split("\n");
   data.shift();
-  data.forEach((d) => generate_unit_block(d.split("\t")));
+  data.forEach((d) => d !== "" && generate_unit_block(d.split("\t")));
   main.appendChild(house_block);
 
   document.querySelectorAll(".title").forEach((el) => {
